@@ -30,7 +30,11 @@
           $('#m').val('');
           return false;
         });
-      })
+        // Append messages
+        socket.on('chat message', function(msg){
+          $('#messages').append($('<li>').text(msg));
+        });
+      });
     </script>
   </body>
 </html>
